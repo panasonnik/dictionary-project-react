@@ -1,12 +1,14 @@
 import React from "react";
 import Synonyms from "./Synonyms";
+import Header from "./Header";
 
 export default function Results(props) {
   if (props.data) {
     return (
       <div className="Results">
-        <h3>{props.data.word}</h3>
-        <p className="phonetic">{props.data.phonetic}</p>
+        <Header data={props.data} />
+        <p>{props.data.phonetic}</p>
+
         {props.data.meanings.map(function (meaning, index) {
           return (
             <div key={index}>

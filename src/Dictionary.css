@@ -6,7 +6,7 @@
   text-transform: capitalize;
   color: #03045e;
 }
-.Results .phonetic {
+.Results p {
   font-size: 20px;
 }
 .Results .part-of-speech {
@@ -14,4 +14,9 @@
 }
 .Results .definition {
   font-size: 20px;
+}
+.Header .play-btn {
+  padding: 10px 16px;
+  background: white;
+  border-radius: 50%;
 }
