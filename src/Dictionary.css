@@ -1,0 +1,17 @@
+.Dictionary .submit-btn {
+  border: 1px solid grey;
+}
+.Results h3 {
+  font-size: 40px;
+  text-transform: capitalize;
+  color: #03045e;
+}
+.Results .phonetic {
+  font-size: 20px;
+}
+.Results .part-of-speech {
+  font-size: 24px;
+}
+.Results .definition {
+  font-size: 20px;
+}
