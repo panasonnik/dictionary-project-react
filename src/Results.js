@@ -1,4 +1,5 @@
 import React from "react";
+import Synonyms from "./Synonyms";
 
 export default function Results(props) {
   if (props.data) {
@@ -12,7 +13,6 @@ export default function Results(props) {
               <p className="part-of-speech">
                 <em>{meaning.partOfSpeech}</em>
               </p>
-
               {meaning.definitions.map(function (definition, index) {
                 if (index < 5) {
                   return (
@@ -21,6 +21,7 @@ export default function Results(props) {
                       <p className="definition mb-5 fw-bold">
                         {definition.example}
                       </p>
+                      <Synonyms data={definition.synonyms} />
                     </div>
                   );
                 } else {
