@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Dictionary.css";
 
 export default function Dictionary() {
   const [keyword, setKeyword] = useState(null);
+  const [result, setResult] = useState(null);
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -16,7 +18,7 @@ export default function Dictionary() {
     setKeyword(event.target.value);
   }
   function handleResponse(response) {
-    console.log(response.data[0]);
+    setResult(response.data[0]);
   }
 
   return (
@@ -30,6 +32,7 @@ export default function Dictionary() {
         />
         <input type="submit" value="Search" />
       </form>
+      <Results data={result} />
     </div>
   );
 }
