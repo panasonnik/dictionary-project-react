@@ -12,16 +12,21 @@ export default function Results(props) {
               <p className="part-of-speech">
                 <em>{meaning.partOfSpeech}</em>
               </p>
-              <p className="definition mb-5">
-                {meaning.definitions[0].definition}
-              </p>
-              {/* {meaning.definitions.map(function (definition, index) {
-                return (
-                  <div key={index}>
-                    <p>{definition.definition}</p>
-                  </div>
-                );
-              })} */}
+
+              {meaning.definitions.map(function (definition, index) {
+                if (index < 5) {
+                  return (
+                    <div key={index}>
+                      <p className="definition mb-5">{definition.definition}</p>
+                      <p className="definition mb-5 fw-bold">
+                        {definition.example}
+                      </p>
+                    </div>
+                  );
+                } else {
+                  return null;
+                }
+              })}
             </div>
           );
         })}
