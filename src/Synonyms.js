@@ -5,15 +5,16 @@ export default function Synonyms(props) {
   if (props.data.length > 0) {
     return (
       <div className="Synonyms">
-        <p>
-          <strong>Synonyms:</strong>
-        </p>
-        <ul>
+        <div className="row">
           {props.data.map(function (synonym, index) {
             console.log(synonym);
-            return <li key={index}>{synonym}</li>;
+            return (
+              <div key={index} className="col-auto synonym-word">
+                {synonym}
+              </div>
+            );
           })}
-        </ul>
+        </div>
       </div>
     );
   } else {

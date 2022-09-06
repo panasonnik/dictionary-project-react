@@ -7,29 +7,28 @@ export default function Results(props) {
     return (
       <div className="Results">
         <Header data={props.data} />
-        <p>{props.data.phonetic}</p>
 
         {props.data.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
-              <p className="part-of-speech">
-                <em>{meaning.partOfSpeech}</em>
-              </p>
-              {meaning.definitions.map(function (definition, index) {
-                if (index < 5) {
-                  return (
-                    <div key={index}>
-                      <p className="definition mb-5">{definition.definition}</p>
-                      <p className="definition mb-5 fw-bold">
-                        {definition.example}
-                      </p>
-                      <Synonyms data={definition.synonyms} />
-                    </div>
-                  );
-                } else {
-                  return null;
-                }
-              })}
+              <section>
+                <p className="part-of-speech fw-bold">{meaning.partOfSpeech}</p>
+                {meaning.definitions.map(function (definition, index) {
+                  if (index < 5) {
+                    return (
+                      <div key={index} className="definition-example">
+                        <p className="definition"> {definition.definition}</p>
+                        <p className="definition example mb-3">
+                          {definition.example}
+                        </p>
+                        <Synonyms data={definition.synonyms} />
+                      </div>
+                    );
+                  } else {
+                    return null;
+                  }
+                })}
+              </section>
             </div>
           );
         })}

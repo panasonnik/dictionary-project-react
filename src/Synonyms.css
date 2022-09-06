@@ -1,4 +1,8 @@
-.Synonyms div {
-  font-size: 16px;
-  color: red;
+.Synonyms .synonym-word {
+  padding: 10px 20px;
+  border-radius: 16px;
+  background: #97bae8;
+  opacity: 0.8;
+  font-size: 18px;
+  margin: 0 48px 14px;
 }
