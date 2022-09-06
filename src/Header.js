@@ -14,7 +14,6 @@ export default function Header(props) {
   function playSound() {
     audio.play();
   }
-  console.log(props.data);
   return (
     <div className="Header">
       <section>
