@@ -14,16 +14,20 @@ export default function Results(props) {
               <section>
                 <p className="part-of-speech fw-bold">{meaning.partOfSpeech}</p>
                 {meaning.definitions.map(function (definition, index) {
-                  return (
-                    <div key={index} className="definition-example">
-                      <p className="definition"> {definition.definition}</p>
-                      <p className="definition example mb-3">
-                        {definition.example}
-                      </p>
+                  if (index < 5) {
+                    return (
+                      <div key={index} className="definition-example">
+                        <p className="definition"> {definition.definition}</p>
+                        <p className="definition example mb-3">
+                          {definition.example}
+                        </p>
 
-                      <Synonyms data={definition.synonyms} />
-                    </div>
-                  );
+                        <Synonyms data={definition.synonyms} />
+                      </div>
+                    );
+                  } else {
+                    return null;
+                  }
                 })}
               </section>
             </div>

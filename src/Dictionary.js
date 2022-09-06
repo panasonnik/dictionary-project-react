@@ -23,8 +23,12 @@ export default function Dictionary() {
 
   return (
     <div className="Dictionary">
+      <h2 className="text-center fw-bold mt-3">D I C T I O N A R Y</h2>
       <section>
-        <form className="my-5" onSubmit={handleSubmit}>
+        <h3 className="text-center my-3 fw-bold">
+          What word do you want to look up?
+        </h3>
+        <form className="mb-5" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-10">
               <input
