@@ -20,12 +20,12 @@ export default function Header(props) {
         <div className="row">
           <div className="col-1">
             <button onClick={playSound} className="play-btn me-3">
-              <i class="fa-solid fa-volume-high"></i>
+              <i className="fa-solid fa-volume-high"></i>
             </button>
           </div>
           <div className="col-3">
             <h3>{props.data.word}</h3>
-            <p>{transcript}</p>
+            <p className="text-muted">{transcript}</p>
           </div>
         </div>
       </section>
